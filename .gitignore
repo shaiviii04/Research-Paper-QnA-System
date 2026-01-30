@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+
+# Ignore PDFs and data
+data/
+*.pdf
+
+# Virtual environment
+venv/
+.env
+
+# Streamlit
+.streamlit/
+
+# FAISS vector store 
+vectorstore/
+
+# OS files
+.DS_Store
+Thumbs.db
