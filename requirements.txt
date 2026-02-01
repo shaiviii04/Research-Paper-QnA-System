@@ -4,3 +4,5 @@ sentence-transformers
 faiss-cpu
 pypdf
 streamlit
+python-dotenv
+google-genai

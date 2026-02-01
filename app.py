@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from fake_llm import fake_llm
+from llm import llm
 
 VECTORSTORE_PATH = "vectorstore"
 
@@ -36,7 +36,7 @@ question = st.text_input("What do you want to ask? :)")
 if question:
     with st.spinner("Searching papers..."):
          docs = db.similarity_search(question, k=4)  # get top 4 chunks
-         answer = fake_llm(question, docs)
+         answer = llm(question, docs)
          st.subheader("📄 Answer")
          st.text(answer)
 
