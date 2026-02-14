@@ -113,7 +113,10 @@ if ask_btn:
         st.warning("Please type a question first.")
     else:
         with st.spinner("Searching papers..."):
-            retriever = db.as_retriever(search_kwargs={"k": 4})
+            retriever = db.as_retriever(
+                        search_type="mmr",
+                        search_kwargs={"k": 4, "fetch_k": 15, "lambda_mult": 0.7}
+            )
             docs = retriever.invoke(question)
 
         with st.spinner("Generating answer..."):
